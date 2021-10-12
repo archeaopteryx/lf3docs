@@ -1,0 +1,93 @@
+% !TEX spellcheck=en_US
+\documentclass[a4paper]{article}
+\usepackage[american]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage{fancyhdr}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{csquotes}
+\usepackage{hyperref}
+\usepackage[acronym]{glossaries}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage[backend=biber,style=phys]{biblatex}
+
+% variables
+\newcommand*{\dorg}{OSZ IMT}
+\newcommand*{\dauthor}{Stefan Greve and Alireza Dehghanazad}
+\newcommand*{\dtitle}{Workplace Wiring Setup}
+\newcommand*{\dversion}{v0.1}
+
+% header
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\texttt{\dversion}}
+\lhead{\dtitle}
+\cfoot{Page \thepage}
+
+% misc macros
+\newcommand*{\pref}[2]{#1 (\ref{#2})}
+\definecolor{lightgray}{rgb}{0.9725,0.9725,0.9725}
+
+% microtype
+\SetTracking{encoding={*}, shape=sc}{0}
+
+\addbibresource{bibliography.bib}
+
+\setacronymstyle{short-long}
+\makenoidxglossaries
+
+\include{acronyms}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    {\scshape\Huge\bfseries{\dorg}\par}
+    \par\vspace{1cm}
+    \includegraphics[width=0.45\textwidth]{images/logo.png}\par
+    \vspace{3cm}
+    {\huge\bfseries\dtitle\par}
+    \vspace{1cm}
+    {\LARGE\itshape\dauthor\par}
+    \vspace{1cm}
+    {\large\today\par}
+    \vfill
+    \begin{abstract}
+        \lipsum[2-4][12-18]
+    \end{abstract}
+\end{titlepage}
+
+\newpage
+
+\printnoidxglossary[type=\acronymtype]
+
+\newpage
+
+\microtypesetup{protrusion=false}
+\tableofcontents
+\microtypesetup{protrusion=true}
+
+\newpage
+
+% === Begin Section Includes ===
+
+\include{sections/introduction}
+
+\include{sections/formulas}
+
+% === End Section Includes ====
+
+\newpage
+
+\medskip
+\printbibliography
+
+\end{document}
