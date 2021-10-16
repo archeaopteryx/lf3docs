@@ -1,46 +1,51 @@
-\section{Netzwerkverbindungen}\label{sec:Netzwerk}
+\section{Physischen Netzwerkplan}\label{sec:Netzwerk}
 
+Hier sind die Netzwerk verbindungen für die zwei Computers am Arbeitsplatz 12 beschrieben. Die Computers werden mit `\computerOne' und `\computerTwo' bezeichnet.
 
-\subsection{Alle Netzwerkverbindungen und Netzwerkkomponenten des Arbeitsplatzes }\label{Dokumentation}
+\subsection{Alle Netzwerkverbindungen und Netzwerkkomponenten des Arbeitsplatzes}\label{Dokumentation}
 
-Ein Cat.5e-Netzwerkkabel ist vom Computer an die Netzwerkkarte 2 (Network Interface Card) im Rack
-angeschlossen. 
+Für beide Computer ist die Netzwerkkarte 2 (Network Interface Card/NIC) über ein Cat.5e-Netzwerkkabel mit dem vorderen Patch-Panel am Arbeitsplatz AG-12 verbunden. Ein zweites Cat.5e-Netzwerkkabel leitet weiter zum Hub im Rack bei AG-12. Dieses ist mit dem Ziel-Port im nächsten Rack beschriftet. 
 
-Zwei Cat.5e-Netzwerkkabel Verbindungen werden im Rack weitergeführt: 
+Von diesen Hub geht es weiter mit einem dritten Cat.5e-Kabel in den Kabelkanal an der Wand. Dieses läuft bis zum Rack im Netzwerkschrank. Im unteren Patch-Panel werden die ankommenden Cat.5e-Netzwerkkabel vom linken PC Port 10 an den Eingang 25 und den rechten PC Port 12 an den Eingang 24 im oben montierten Ethernet-Switch verteilt. Dieser Switch ist über ein Lichtwellenleiter-Kabel (LWL-Kabel) mit Port 1 des obersten Patch-Panel (KVI/SKP/R2.4.22) verbunden. Die Ports sind in \ref{tb:Phys. Netzwerk} gelistet.
 
-\begin{enumerate}
-\item Vom Netzwerkkarte 2 läuft ein gelber Cat5e ins Ethernet 12C
-\item Vom Computer 1 läuft ein blauer Cat.5e-Netzwerkkabel in Konsole Switch 1
-\end{enumerate}
+Dieses oberste Patch-Panel verfügt über einen einzigen Ausgang. Von dort läuft ein LWL-Kabel weiter in den nächsten Raum.
 
-Dann geht ein Cat.5e Netzwerkkabel vom Rack in den Netzwerkschrank.
+\begin{table}[h!]
+\caption{Auflistung der Netzwerkverbindungen der Computer am Arbeitsplatz AG12 Raum 2.4.22}\label{tb:Phys. Netzwerk}
+\centering
+\begin{tabular}{|l|l|l|l|}
+\hline
+Computer 	 & Rack Patch-Panel & Patch-Panel Port  & Switch Port \\ \hline
+\computerOne & Feld C 		   	& 12 			 	& 24		    \\ \hline
+\computerTwo & Feld C		   	& 10				& 25			\\ \hline
+\end{tabular}
+\end{table}
 
-Was gehört in den Nertzwerkschrank
+Die Kabel folgen einem Farbsystem. Zwischen Netzwerkkarten und dem ersten Patch-Panel sind gelbe Kabel verlegt. Das Kabel zwischen Patch-Panel im Netzwerkschrank und Switch ist für jeden Arbeitsplatz blau und rot für den rechten beziehungsweise linken Computer.
 
-\begin{enumerate}
+Was gehört in den Nertzwerkschrank:
+\begin{enumerate}[noitemsep]
 \item Blindabdeckungen.
 \item Fachböden und Schubladen.
 \item Zwei Patchpanele an der Ober- und Unterseite 
 \item Ethernet-Switch
 \end{enumerate}
 
-Im unteren Patch Panel werden die einkommenden Cat.5e-Netzwerkkabel von dem linken PC Port 10 an den Eingang 25 und dem rechten PC Port 12 an den Eingang 24 im oben montierten Ethernet-Switch
-verteilt. Die Kabel im Switch werden im oberesten Patch Panel über einen LWL Patchkabel im Port 1 eingeführt.
+\subsubsection{Netzwerkkomponenten des Arbeitsplatzes}\label{Netzwerkomponenten}
 
-Dieses oberste Patch Panel verfügt über einen einzigen Ausgang, von dort geht ein Lichtwellenleiter Kabel weiter in den nächsten Raum.
-
-\subsubsection{ Netzwerkkomponenten des Arbeitsplatzes}\label{Netzwerkomponenten}
-
-Aktive Netzwerkkomponenten
-
-Netzwerkkarte
-Ethernet Hub
-Switch
+Aktive Netzwerkkomponenten:
+\begin{itemize}[noitemsep]
+\item Netzwerkkarte
+\item Ethernet Hub
+\item Switch
+\end{itemize}
 
 Passive Netzwerkkomponenten
+\begin{itemize}[noitemsep]
+\item Patchkabel
+\item Patchfelder
+\item Netzwerk-Kabel
+\item Netzwerkschränke
+\end{itemize}
 
-Patchkabel
-Patchfelder
-Netzwerk-Kabel
-Netzwerkschränke
 
